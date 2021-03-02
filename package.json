@@ -1,0 +1,33 @@
+{
+  "name": "Unipen",
+  "version": "1.0.0",
+  "description": "Provides more realistics data with ease!",
+  "main": "main.js",
+  "scripts": {
+    "debug": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "andersmandersen",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^11.2.3",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "alpinejs": "^2.8.0",
+    "auto-launch": "^5.0.5",    
+    "electron-is-dev": "^1.2.0",
+    "electron-reload": "^1.5.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "faker": "^5.3.1",
+    "node-key-sender": "^1.0.11"
+  },
+  "build": {
+    "appId": "com.velcon.unipen",
+    "asar": false,
+    "win": {
+      "target": "nsis",
+      "icon": "src/assets/icon.ico"
+    }
+  }
+}

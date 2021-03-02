@@ -1,0 +1,192 @@
+[    
+    {
+        "label": "First Name",
+        "key": "name",
+        "element": "firstName"
+    },
+    {
+        "label": "Last Name",
+        "key": "name",
+        "element": "lastName"
+    },                    
+    {
+        "label": "Middle Name",
+        "key": "name",
+        "element": "middleName"
+    },
+    {
+        "label": "Job Title",
+        "key": "name",
+        "element": "jobTitle"
+    },
+    {
+        "label": "Gender",
+        "key": "name",
+        "element": "gender"
+    },
+    {
+        "label": "Prefix",
+        "key": "name",
+        "element": "prefix"
+    },
+    {
+        "label": "Suffix",
+        "key": "name",
+        "element": "suffix"
+    },
+    {
+        "label": "Title",
+        "key": "name",
+        "element": "title"
+    },
+    {
+        "label": "Job Descriptor",
+        "key": "name",
+        "element": "jobDescriptor"
+    },
+    {
+        "label": "Job Area",
+        "key": "name",
+        "element": "jobArea"
+    },
+    {
+        "label": "Job Type",
+        "key": "name",
+        "element": "jobType"
+    },                    
+    {
+        "label": "zip code",
+        "key": "address",
+        "element": "zipCode"
+    },    
+    {
+        "label": "City",
+        "key": "address",
+        "element": "city"
+    },    
+    {
+        "label": "Street Name",
+        "key": "address",
+        "element": "streetName"
+    },    
+    {
+        "label": "Street Address",
+        "key": "address",
+        "element": "streetAddress"
+    },    
+    {
+        "label": "Street Suffix",
+        "key": "address",
+        "element": "streetSuffix"
+    },    
+    {
+        "label": "Street Prefix",
+        "key": "address",
+        "element": "streetPrefix"
+    },    
+    {
+        "label": "Secondary Address",
+        "key": "address",
+        "element": "secondaryAddress"
+    },    
+    {
+        "label": "County",
+        "key": "address",
+        "element": "county"
+    },    
+    {
+        "label": "Country Code",
+        "key": "address",
+        "element": "countryCode"
+    },    
+    {
+        "label": "State",
+        "key": "address",
+        "element": "state"
+    },    
+    {
+        "label": "State Abbr",
+        "key": "address",
+        "element": "stateAbbr"
+    },    
+    {
+        "label": "Latitude",
+        "key": "address",
+        "element": "latitude"
+    },    
+    {
+        "label": "Longitude",
+        "key": "address",
+        "element": "longitude"
+    },    
+    {
+        "label": "Direction",
+        "key": "address",
+        "element": "direction"
+    },    
+    {
+        "label": "Cardinal Direction",
+        "key": "address",
+        "element": "cardinalDirection"
+    },    
+    {
+        "label": "Ordinal Direction",
+        "key": "address",
+        "element": "ordinalDirection"
+    },    
+    {
+        "label": "Near by GPS Coordinate",
+        "key": "address",
+        "element": "nearbyGPSCoordinate"
+    },    
+    {
+        "label": "TimeZone",
+        "key": "address",
+        "element": "timeZone"
+    },
+    {
+        "label": "Time",
+        "key": "time",
+        "element": "recent"
+    },        
+    {
+        "label": "Words",
+        "key": "lorem",    
+        "element": "words"
+    },    
+    {
+        "label": "Sentence",
+        "key": "lorem",    
+        "element": "sentence"
+    },    
+    {
+        "label": "Slug",
+        "key": "lorem",    
+        "element": "slug"
+    },    
+    {
+        "label": "Sentences",
+        "key": "lorem",    
+        "element": "sentences"
+    },    
+    {
+        "label": "Paragraph",
+        "key": "lorem",    
+        "element": "paragraph"
+    },    
+    {
+        "label": "Paragraphs",
+        "key": "lorem",    
+        "element": "paragraphs"
+    },    
+    {
+        "label": "Text",
+        "key": "lorem",    
+        "element": "text"
+    },    
+    {
+        "label": "Lines",
+        "key": "lorem",    
+        "element": "lines"
+    }    
+]

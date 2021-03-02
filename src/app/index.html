@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unipen - Velcon</title>       
+
+    <script>
+        require('alpinejs')
+    </script>    
+    <link rel="stylesheet" href="../stylesheets/main.css">
+</head>
+<body style="-webkit-app-region: drag">
+    <div x-data="data()"> 
+        <div class="header">
+            <div class="menu">
+                <span class="close" x-on:click="onClose" style="-webkit-app-region: no-drag;">X</span>
+            </div>
+            <input id="search-input" type="text" x-model="search" placeholder="Type to search..." x-on:keyup="inputChanged" x-on:keydown.down="onArrow" x-on:keydown.up="onArrow" style="-webkit-app-region: no-drag;">
+        </div>                   
+        <div style="-webkit-app-region: no-drag;">
+            <template x-for="(option, index) in filteredOptions()">
+                <a @click.prevent="setResult(option)" x-text="option.label" style="display: block;" class="item" :class="{'active-item': index === arrowCounter }"></a>
+            </template>
+        </div>                
+    </div>
+
+    <script>
+        const { ipcRenderer } = require ('electron');
+        var faker = require('faker');
+
+        function startTimer() { 
+            setTimeout(function() {
+                document.getElementById('search-input').focus();
+                startTimer();
+            }, 0);
+        }
+        startTimer();
+
+        function data() {
+            return { 
+                arrowCounter: 0,               
+                search: "",
+                selected: {
+                    label: "",
+                    key: "",
+                    element: "",
+                },
+                options: require('./data.json'),
+                /**
+                 * Arrow handling     
+                 */
+                onArrow(event) {                        
+                    if (this.filteredOptions().length > 0) {
+                        this.arrowCounter = event.code == "ArrowDown" ? ++this.arrowCounter : --this.arrowCounter;
+                        if (this.arrowCounter >= this.filteredOptions().length)
+                            this.arrowCounter = (this.arrowCounter) % this.filteredOptions().length;
+                        else if (this.arrowCounter < 0)
+                            this.arrowCounter = this.filteredOptions().length + this.arrowCounter;        
+                    }
+                },
+                /**
+                 * Trigger when typing in search input
+                 */ 
+                inputChanged(event) {
+                    if (event.code == "ArrowUp" || event.code == "ArrowDown") {
+                        this.onArrow(event);
+                        return;
+                    }
+                        
+                    if (event.code == "Enter") {
+                        this.setResult(this.filteredOptions()[this.arrowCounter]);
+                        return;      
+                    }     
+                    
+                    if (event.code == "Escape") {
+                        this.onClose();
+                        return;      
+                    }     
+                },
+                /**
+                 * Filter handler
+                 */ 
+                filteredOptions() {
+                    if (this.search == "") {
+                        return this.options.slice(0,4);
+                    }
+
+                    return this.options.filter((option) => {
+                        return option.label.toLowerCase().includes(this.search.toLowerCase());
+                    }).slice(0,4);
+                },
+                /**
+                 * Forward result to IcpMain request in main.js
+                 */
+                setResult(selected) {                    
+                    ipcRenderer.send('send', faker.fake("{{"+selected.key+"."+selected.element+"}}"));  
+                    this.search = "";
+                    this.arrowCounter = 0;
+                },
+                /**
+                 * Close handling 
+                 */
+                onClose() {
+                    ipcRenderer.send('dismiss');   
+                }
+            };
+        }
+    </script>
+</body>
+</html>
