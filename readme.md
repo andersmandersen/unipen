@@ -22,9 +22,7 @@ This is a windows application, that helps to provide more realistics data when p
 
 Use the following link to download the lastest version.
 
-```
-https://github.com/andersmandersen/unipen/releases/download/v1.0.0/Unipen-Setup-1.0.0.exe
-```
+[Download](https://github.com/andersmandersen/unipen/releases/download/v1.0.0/Unipen-Setup-1.0.0.exe)
 
 Requires Windows *
 
